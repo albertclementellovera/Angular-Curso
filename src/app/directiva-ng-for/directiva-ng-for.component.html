@@ -1,0 +1,17 @@
+<ul>
+  <li *ngFor="let elemento of arreglo1; let indice=index; let impar=odd; trackBy: rastrearPor;let primero=first; let ultimo=last">
+    El {{elemento}} está en la posición {{indice}} se encuentra en una posición {{impar?'impar':'par'}}
+    {{primero?'es el primero del arreglo':''}} {{ultimo?'es el último del arreglo':''}}
+  </li>
+</ul>
+
+<!-- Seria el mismo resultado si lo hacemos
+  <ul>
+  <ng-template ngFor let-elemento [ngForOf]="arreglo1" let-indice="index" let-impar="odd" let-primero="fist" let-ultimo="last" [ngForTrackBy]="rastrearPor">
+    <li>
+      El {{elemento}} está en la posición {{indice}} se encuentra en una posición {{impar?'impar':'par'}}
+      {{primero?'es el primero del arreglo':''}} {{ultimo?'es el último del arreglo':''}}
+    </li>
+  </ng-template>
+</ul>
+-->

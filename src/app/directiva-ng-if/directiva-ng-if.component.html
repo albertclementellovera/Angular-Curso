@@ -1,0 +1,14 @@
+<!--h1 *ngIf="alerta">Todos los precios se encuentran rebajados 50%</h1> -->
+<table>
+  <tr>
+    <td>Nombre</td>
+    <td>Edad</td>
+  </tr>
+  <tr *ngFor="let persona of personas">
+    <td>{{persona.nombre}}</td>
+    <td>{{persona.edad}}</td>
+    <ng-template *ngIf="persona.mayorEdad();then mayor else menor"></ng-template>
+    <ng-template #mayor><p>Es mayor de edad</p></ng-template>
+    <ng-template #menor><p>menor de edad</p></ng-template>
+  </tr>
+</table>
