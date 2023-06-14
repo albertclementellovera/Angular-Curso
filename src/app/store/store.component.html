@@ -1,0 +1,23 @@
+<div *ngFor="let p of products()">
+  <!-- Nombre producto -->
+  <input type="text" [value]="p.name" readonly/>
+  <!-- Precio prodcuto -->
+  <input type="number" [value]="p.price" readonly/>
+  <!-- Cantidad producto -->
+  <input type="number" [value]="p.quantity" readonly/>
+  <!-- Elimina una unidad de cantidad -->
+  <button (click)="less(p)">-</button>
+  <!-- Añade una unidad de cantidad -->
+  <button (click)="more(p)">+</button>
+</div>
+
+<!-- Total de precio de todos los productos -->
+<p>Total: {{ total() }}</p>
+<!-- Numero de productos -->
+<p>Num products: {{ numProducts() }}</p>
+
+<!-- Añade un producto mas -->
+<button (click)="addProduct()">Add product</button>
+
+<!-- Resetea la cantidad de los productos a 1 -->
+<button (click)="reset()">Reset</button>
